@@ -73,7 +73,8 @@ server <- function(input, output) {  #Création d'un outil réactif: ensemble do
                  lat=~lat,
                  popup=~as.character(round(Price,2)), #Afficher le prix quand on passe le curseur
                  label=~as.character(round(Price,2)),
-                 icon=HouseIcon)
+                 icon=HouseIcon,
+                 clusterOptions = markerClusterOptions())
     
     
   })
