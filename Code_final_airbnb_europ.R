@@ -12,7 +12,7 @@ library(dplyr)
 HouseIcon <- makeIcon(
   iconUrl = "maison1.png",
   iconWidth = 15, iconHeight = 15,
-  iconAnchorX = 22, iconAnchorY = 94
+  iconAnchorX = 8, iconAnchorY = 15
   
 )
 
@@ -33,8 +33,8 @@ ui <- dashboardPage(
     selectInput("Room",
                 "Type de logement",
                 choices=unique(data_cities$room_type, selected='Private room')),
-   
-     numericInput("Clean", "Propreté", value=1,min=0,max=10,step=1),
+    
+    numericInput("Clean", "Propreté", value=1,min=0,max=10,step=1),
     
     numericInput("Capacity","Nombre de personne", value=2,min=2,max=6,step=1),
     numericInput("Satisfaction", "Satisfaction client", value=20,min=20,max=100,step=5)
@@ -48,10 +48,10 @@ ui <- dashboardPage(
       box(title=span(icon("map"),"Carte"),status="success" , width = 12,height = 490,solidHeader = TRUE,collapsible = TRUE,
           leafletOutput(outputId='map', height=400, width = 1250)#Crer un élément de l'interface qui indique qu'on doit adfficher une sortie carte leaflet ici
       )
-    
-      )
+      
     )
   )
+)
 
 
 server <- function(input, output) {  #Création d'un outil réactif: ensemble donnée géographique, chq fois user modifie variable l'application exécutera des actions
@@ -60,7 +60,7 @@ server <- function(input, output) {  #Création d'un outil réactif: ensemble do
     data_cities %>% 
       filter(City == input$Ville & Price >= input$Prix[1] & Price <= input$Prix[2] & Weekdays_WE==input$Day
              & cleanliness_rating>=input$Clean & room_type==input$Room & 
-              person_capacity>=input$Capacity & guest_satisfaction_overall >= input$Satisfaction)
+               person_capacity>=input$Capacity & guest_satisfaction_overall >= input$Satisfaction)
   })
   
   
@@ -83,4 +83,3 @@ server <- function(input, output) {  #Création d'un outil réactif: ensemble do
 
 # Run the application 
 shinyApp(ui = ui, server = server)
-
