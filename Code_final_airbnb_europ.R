@@ -43,10 +43,11 @@ ui <- dashboardPage(
     
   ),
   dashboardBody(
+    tags$style(type = "text/css", "#map {height: calc(90vh - 80px) !important;}"),
     # Boxes need to be put in a row (or column)
     fluidRow(
-      box(title=span(icon("map"),"Carte"),status="success" , width = 12,height = 490,solidHeader = TRUE,collapsible = TRUE,
-          leafletOutput(outputId='map', height=400, width = 1250)#Crer un élément de l'interface qui indique qu'on doit adfficher une sortie carte leaflet ici
+      box(title=span(icon("map"),"Carte"),status="success", width = 12, solidHeader = TRUE,collapsible = TRUE,
+          leafletOutput(outputId='map', height="100%", width = "100%")#Crer un élément de l'interface qui indique qu'on doit adfficher une sortie carte leaflet ici
       )
       
     )
@@ -70,8 +71,8 @@ server <- function(input, output) {  #Création d'un outil réactif: ensemble do
       addTiles() %>%
       addMarkers(lng=~lng,
                  lat=~lat,
-                 popup=~as.character(Price), #Afficher le prix quand on passe le curseur
-                 label=~as.character(Price),
+                 popup=~as.character(round(Price,2)), #Afficher le prix quand on passe le curseur
+                 label=~as.character(round(Price,2)),
                  icon=HouseIcon)
     
     
