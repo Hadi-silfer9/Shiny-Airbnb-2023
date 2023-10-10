@@ -21,7 +21,7 @@ predictions <- predict(model_rf, newdata = test_data)
 rmse <- sqrt(mean((predictions - test_data$Price)^2))
 cat("RMSE:", rmse, "\n") 
 
-#En moyenne, les prédictions de notre modèle diffèrent de 189.0294 euros par rapport aux vraies valeurs.
+#En moyenne, les prédictions de notre modèle diffèrent de 189.0294 euros par rapport aux vraies valeurs, ceci peut être satisfaisant compte tenu de la large plage des Prix.
 
 
 # Calculer l'erreur absolue moyenne (MAE)
