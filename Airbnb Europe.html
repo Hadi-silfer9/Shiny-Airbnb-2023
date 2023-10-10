@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:3805/ -->
+<html style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.7.5];shiny-javascript[1.7.5];font-awesome[6.4.2];selectize[0.12.4];ionrangeslider-javascript[2.3.1];strftime[0.9.2];ionrangeslider-css[2.3.1];htmlwidgets[1.6.2];datatables-css[0.0.0];datatables-binding[0.29];crosstalk[1.2.0];leaflet[1.3.1];leafletfix[1.0.0];proj4[2.6.2];Proj4Leaflet[1.0.1];rstudio_leaflet[1.3.1];leaflet-binding[2.2.0];bootstrap[3.4.1];AdminLTE[2.0.6];shinydashboard[0.7.2]</script>
+<script src="./Airbnb Europe_files/jquery.min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/shiny.min.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/shiny.min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/all.min.css" rel="stylesheet">
+<link href="./Airbnb Europe_files/v4-shims.min.css" rel="stylesheet">
+<link href="./Airbnb Europe_files/selectize.bootstrap3.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/selectize.min.js.téléchargement"></script>
+<script src="./Airbnb Europe_files/selectize-plugin-a11y.min.js.téléchargement"></script>
+<script src="./Airbnb Europe_files/ion.rangeSlider.min.js.téléchargement"></script>
+<script src="./Airbnb Europe_files/strftime-min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/ion.rangeSlider.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/htmlwidgets.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/datatables-crosstalk.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/datatables.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/crosstalk.min.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/crosstalk.min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/leaflet.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/leaflet.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/leafletfix.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/proj4.min.js.téléchargement"></script>
+<script src="./Airbnb Europe_files/proj4leaflet.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/rstudio_leaflet.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/leaflet.js(1).téléchargement"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./Airbnb Europe_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Airbnb Europe_files/bootstrap-accessibility.min.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/bootstrap.min.js.téléchargement"></script>
+<script src="./Airbnb Europe_files/bootstrap-accessibility.min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/AdminLTE.min.css" rel="stylesheet">
+<link href="./Airbnb Europe_files/_all-skins.min.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/app.min.js.téléchargement"></script>
+<link href="./Airbnb Europe_files/shinydashboard.css" rel="stylesheet">
+<script src="./Airbnb Europe_files/shinydashboard.min.js.téléchargement"></script>  <title>Airbnb Europe</title>
+</head>
+<body class="skin-green" style="min-height: 611px; height: auto;">
+  <div class="wrapper" style="height: auto;">
+    <header class="main-header">
+      <span class="logo">Airbnb Europe</span>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <span style="display:none;">
+          <i class="fas fa-bars" role="presentation" aria-label="bars icon"></i>
+        </span>
+        <a href="http://127.0.0.1:3805/#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="https://www.institut-agro-rennes-angers.fr/" target="_blank">
+                <img src="./Airbnb Europe_files/g6qe.png" height="25px">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebarCollapsed" class="main-sidebar shiny-bound-input" data-collapsed="false">
+      <section id="sidebarItemExpanded" class="sidebar shiny-bound-input">
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="http://127.0.0.1:3805/#shiny-tab-Documentation" data-toggle="tab" data-value="Documentation" aria-expanded="true" tabindex="0" aria-selected="true">
+              <i class="fas fa-circle-info" role="presentation" aria-label="circle-info icon"></i>
+              <span>Documentation</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:3805/#shiny-tab-BaseDonnees" data-toggle="tab" data-value="BaseDonnees">
+              <i class="fas fa-database" role="presentation" aria-label="database icon"></i>
+              <span>Base de données</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:3805/#shiny-tab-PrixMoyVill" data-toggle="tab" data-value="PrixMoyVill">
+              <i class="fas fa-chart-column" role="presentation" aria-label="chart-column icon"></i>
+              <span>Prix moyen</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:3805/#shiny-tab-RechercherunAirBNB" data-toggle="tab" data-value="RechercherunAirBNB">
+              <i class="fas fa-gauge" role="presentation" aria-label="gauge icon"></i>
+              <span>Recherche</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:3805/#shiny-tab-Deposeruneannonce" data-toggle="tab" data-value="Deposeruneannonce">
+              <i class="fas fa-table-cells" role="presentation" aria-label="table-cells icon"></i>
+              <span>Dépôt annonce</span>
+            </a>
+          </li>
+          <div data-display-if="input.sidebar === &#39;PrixMoyVill&#39;" data-ns-prefix="" style="display: none;">
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Ville3-label" for="Ville3-selectized">Choisissez une ou plusieurs villes</label>
+              <div>
+                <select id="Ville3" class="shiny-input-select selectized shiny-bound-input" multiple="multiple" tabindex="-1" style="display: none;"><option value="Paris" selected="selected">Paris</option></select><div class="selectize-control shiny-input-select multi plugin-selectize-plugin-a11y"><div class="selectize-input items not-full has-options has-items"><div class="item" data-value="Paris">Paris</div><input type="text" autocomplete="off" tabindex="" id="Ville3-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="u2dft3yiqi" style="width: 4px;"></div><div class="selectize-dropdown multi shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="u2dft3yiqi"></div></div></div>
+                <script type="application/json" data-for="Ville3">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+          </div>
+          <div data-display-if="input.sidebar === &#39;RechercherunAirBNB&#39;" data-ns-prefix="" style="display: none;">
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Ville-label" for="Ville-selectized">Choisir une ville</label>
+              <div>
+                <select id="Ville" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Paris" selected="selected">Paris</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Paris">Paris</div><input type="text" autocomplete="off" tabindex="" id="Ville-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="k6f6k8v866" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="k6f6k8v866"></div></div></div>
+                <script type="application/json" data-for="Ville" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Prix-label" for="Prix">Selectionner la gamme de prix</label>
+              <span class="irs irs--shiny js-irs-0 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: hidden;">0</span><span class="irs-max" style="visibility: visible;">2,000</span><span class="irs-from" style="visibility: hidden; left: 2.46875%;">0</span><span class="irs-to" style="visibility: hidden; left: 8.31015%;">200</span><span class="irs-single" style="visibility: visible; left: -0.41915%;">0 — 200</span></span><span class="irs-grid" style="width: 89%; left: 5.4%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.7539%;">0</span><span class="irs-grid-pol small" style="left: 6.666666666666666%"></span><span class="irs-grid-pol small" style="left: 3.333333333333333%"></span><span class="irs-grid-pol" style="left: 10%"></span><span class="irs-grid-text js-grid-text-1" style="left: 10%; visibility: visible; margin-left: -5.2578%;">200</span><span class="irs-grid-pol small" style="left: 16.666666666666668%"></span><span class="irs-grid-pol small" style="left: 13.333333333333332%"></span><span class="irs-grid-pol" style="left: 20%"></span><span class="irs-grid-text js-grid-text-2" style="left: 20%; visibility: visible; margin-left: -5.2578%;">400</span><span class="irs-grid-pol small" style="left: 26.666666666666668%"></span><span class="irs-grid-pol small" style="left: 23.333333333333332%"></span><span class="irs-grid-pol" style="left: 30%"></span><span class="irs-grid-text js-grid-text-3" style="left: 30%; visibility: hidden; margin-left: -5.2578%;">600</span><span class="irs-grid-pol small" style="left: 36.666666666666664%"></span><span class="irs-grid-pol small" style="left: 33.333333333333336%"></span><span class="irs-grid-pol" style="left: 40%"></span><span class="irs-grid-text js-grid-text-4" style="left: 40%; margin-left: -5.2578%;">800</span><span class="irs-grid-pol small" style="left: 46.666666666666664%"></span><span class="irs-grid-pol small" style="left: 43.333333333333336%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-5" style="left: 50%; visibility: hidden; margin-left: -7.1328%;">1,000</span><span class="irs-grid-pol small" style="left: 56.666666666666664%"></span><span class="irs-grid-pol small" style="left: 53.333333333333336%"></span><span class="irs-grid-pol" style="left: 60%"></span><span class="irs-grid-text js-grid-text-6" style="left: 60%; visibility: visible; margin-left: -7.1328%;">1,200</span><span class="irs-grid-pol small" style="left: 66.66666666666667%"></span><span class="irs-grid-pol small" style="left: 63.333333333333336%"></span><span class="irs-grid-pol" style="left: 70%"></span><span class="irs-grid-text js-grid-text-7" style="left: 70%; visibility: hidden; margin-left: -7.1328%;">1,400</span><span class="irs-grid-pol small" style="left: 76.66666666666667%"></span><span class="irs-grid-pol small" style="left: 73.33333333333333%"></span><span class="irs-grid-pol" style="left: 80%"></span><span class="irs-grid-text js-grid-text-8" style="left: 80%; margin-left: -7.1328%;">1,600</span><span class="irs-grid-pol small" style="left: 86.66666666666667%"></span><span class="irs-grid-pol small" style="left: 83.33333333333333%"></span><span class="irs-grid-pol" style="left: 90%"></span><span class="irs-grid-text js-grid-text-9" style="left: 90%; visibility: hidden; margin-left: -7.1328%;">1,800</span><span class="irs-grid-pol small" style="left: 96.66666666666667%"></span><span class="irs-grid-pol small" style="left: 93.33333333333333%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-10" style="left: 100%; visibility: visible; margin-left: -7.1328%;">2,000</span></span><span class="irs-bar" style="cursor: ew-resize; left: 5.5%; width: 8.9%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to type_last" style="left: 8.9%;"><i></i><i></i><i></i></span></span><input class="js-range-slider irs-hidden-input shiny-bound-input" id="Prix" data-skin="shiny" data-type="double" data-min="0" data-max="2000" data-from="0" data-to="200" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-drag-interval="true" data-data-type="number" tabindex="-1" readonly="">
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Day-label" for="Day-selectized">En semaine ou en week-end</label>
+              <div>
+                <select id="Day" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Weekend" selected="selected">Weekend</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Weekend">Weekend</div><input type="text" autocomplete="off" tabindex="" id="Day-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="pqh3rwpeyv" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="pqh3rwpeyv"></div></div></div>
+                <script type="application/json" data-for="Day" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Room-label" for="Room-selectized">Type de logement</label>
+              <div>
+                <select id="Room" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Private room" selected="selected">Private room</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Private room">Private room</div><input type="text" autocomplete="off" tabindex="" id="Room-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="ixd3upoij5" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="ixd3upoij5"></div></div></div>
+                <script type="application/json" data-for="Room" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Clean-label" for="Clean">Propreté</label>
+              <input id="Clean" type="number" class="shiny-input-number form-control shiny-bound-input" value="1" min="0" max="10" step="1">
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Capacity-label" for="Capacity">Nombre de personne</label>
+              <input id="Capacity" type="number" class="shiny-input-number form-control shiny-bound-input" value="2" min="2" max="6" step="1">
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Satisfaction-label" for="Satisfaction">Satisfaction client</label>
+              <input id="Satisfaction" type="number" class="shiny-input-number form-control shiny-bound-input" value="20" min="20" max="100" step="5">
+            </div>
+          </div>
+          <div data-display-if="input.sidebar === &#39;Deposeruneannonce&#39;" data-ns-prefix="" style="display: none;">
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Ville2-label" for="Ville2-selectized">Choisir une ville</label>
+              <div>
+                <select id="Ville2" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Paris" selected="selected">Paris</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Paris">Paris</div><input type="text" autocomplete="off" tabindex="" id="Ville2-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="sd3kq4agcc" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="sd3kq4agcc"></div></div></div>
+                <script type="application/json" data-for="Ville2" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Day2-label" for="Day2-selectized">En semaine ou en week-end</label>
+              <div>
+                <select id="Day2" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Weekend" selected="selected">Weekend</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Weekend">Weekend</div><input type="text" autocomplete="off" tabindex="" id="Day2-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="4nrat4w3jv" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="4nrat4w3jv"></div></div></div>
+                <script type="application/json" data-for="Day2" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Room2-label" for="Room2-selectized">Type de logement</label>
+              <div>
+                <select id="Room2" class="shiny-input-select selectized shiny-bound-input" tabindex="-1" style="display: none;"><option value="Private room" selected="selected">Private room</option></select><div class="selectize-control shiny-input-select single plugin-selectize-plugin-a11y"><div class="selectize-input items full has-options has-items"><div class="item" data-value="Private room">Private room</div><input type="text" autocomplete="off" tabindex="" id="Room2-selectized" role="combobox" aria-expanded="false" haspopup="listbox" aria-owns="oq7yyqz38n" style="width: 4px;"></div><div class="selectize-dropdown single shiny-input-select plugin-selectize-plugin-a11y" style="display: none;"><div class="selectize-dropdown-content" role="listbox" id="oq7yyqz38n"></div></div></div>
+                <script type="application/json" data-for="Room2" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+              </div>
+            </div>
+            <div class="form-group shiny-input-container">
+              <label class="control-label" id="Capacity2-label" for="Capacity2">Nombre de personne</label>
+              <input id="Capacity2" type="number" class="shiny-input-number form-control shiny-bound-input" value="2" min="2" max="6" step="1">
+            </div>
+          </div>
+          <div id="sidebar" class="sidebarMenuSelectedTabItem shiny-bound-input" data-value="Documentation"></div>
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 1237px;">
+      <section class="content">
+        <style type="text/css">#map {
+                height: calc(90vh - 80px) !important;
+               }
+               #map2 {
+                height: calc(77vh - 80px) !important;
+               }
+               #PrixMoyWDWE,  #PrixMoyTypLgmt, #PrixMoyPersCap, #PrixMoyPropr, #PrixSatisf {
+                height: calc(85vh - 45px) !important;
+               }
+               .main-header .logo {
+                font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+                font-weight: bold;
+                font-size: 25px;
+                color: white !important;
+                box-shadow: inset 0 0 0 0 white;
+                transition: color 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+                -webkit-transition: color 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+               }
+               .main-header .logo:hover{
+                color: #008D4C !important;
+                box-shadow: inset 100vh 0 0 0 white;
+               }
+               .leaflet-popup-content-wrapper {
+                background-color: rgba(255, 255, 255, 0.9);
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                color: black;
+                padding: 2px;
+                border-radius: 0px;
+                border: 1px dashed black;
+               }
+               html::-webkit-scrollbar {
+                width: 12px;
+               }
+               html::-webkit-scrollbar-track {
+                border-radius: 8px;
+                background-color: #ECF0F5;
+                border: 1px solid #cacaca;
+               }
+               html::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                background-color: #008D4C;
+               }
+               .icon-title {
+                height: 20px;
+               }
+               h1 {
+                font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+                font-weight: bold;
+                text-align: center;
+                background-image: linear-gradient(
+                                  to right,
+                                  #008D4C,
+                                  #008D4C 50%,
+                                  #000 50%
+                                  );
+                background-size: 200% 100%;
+                background-position: -100%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+               }
+               h1:before{
+                content: '';
+                background: #008D4C;
+                display: block;
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 0;
+                height: 3px;
+                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+               }
+               h1:hover {
+                background-position: 0;
+               }
+               h1:hover::before{
+                width: 100%;
+               }
+               h2 {
+                font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+                margin-left: 25px;
+               }
+               p {
+                background-color:rgba(0, 141, 76, 0.5);
+                padding: 15px;
+                border-radius: 10px;
+                font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+               }
+               p span {
+                color: #222D32;
+                font-weight: bold;
+               }</style>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="shiny-tab-Documentation" aria-hidden="false" tabindex="0">
+            <div class="row">
+              <div style="display: flex; justify-content: center; align-items: center">
+                <div class="col-sm-8">
+                  <div class="box box-success">
+                    <div class="box-header">
+                      <h3 class="box-title">
+                        </h3><h1>
+                          Explorez et utilisez l'application Airbnb Europe avec facilité !
+                          <i class="far fa-face-smile icon-title" role="presentation" aria-label="face-smile icon"></i>
+                        </h1>
+                      
+                    </div>
+                    <div class="box-body">
+                      <h2>1. Base de Données</h2>
+                      <p>
+                        La base de données fournit un aperçu complet des prix Airbnb dans certaines des villes européennes les plus populaires au cours de l’année 2021.
+                        <br>
+                        Nous avons décidé pour le développement de notre application de nous focaliser uniquement sur les villes :
+                        <em> Paris, Amsterdam, Barcelone, Berlin, Rome.</em>
+                        <br>
+                        L’application pouvant bien entendu être déclinée à toutes les autres.
+                        <br>
+                        Chaque annonce Airbnb est évaluée en fonction de divers attributs :
+                        <em> le type de logement, les notes de propreté et de satisfaction, la capacité d’accueil, la distance du centre-ville, les coordonnées géographiques (latitude et longitude), la distance au métro ainsi que le prix du bien à louer.</em>
+                        <br>
+                        Nous avons décidé de ne garder que les variables 
+                        <br>
+                        <br>
+                        La base de données brute est visible dans l'onglet
+                        <span> 'Base de données'</span>
+                        .
+                      </p>
+                      <h2>2. Prix Moyen par Ville</h2>
+                      <p>
+                        Consultez l'onglet
+                        <span> 'Prix moyen' </span>
+                        pour découvrir le graphique des prix moyens par ville, ainsi que le prix moyen en fonction des différentes caractéristiques du logement.
+                      </p>
+                      <h2>3. Carte Interactive</h2>
+                      <p>
+                        L'onglet
+                        <span> 'Recherche' </span>
+                        vous permet d'explorer les offres Airbnb par ville. Utilisez les filtres sur le côté pour affiner vos critères de recherche. La carte affiche des marqueurs colorés en fonction des prix. Survolez les marqueurs pour voir les prix exacts et les détails.
+                      </p>
+                      <h2>4. Prédiction du Prix</h2>
+                      <p>
+                        L'onglet
+                        <span> 'Dépôt annonce' </span>
+                        vous permet d'estimer le prix de location d'un bien Airbnb en fonction de certaines caractéristiques. Voici comment utiliser cette fonctionnalité : 
+                        <br>
+                        • Choisir une ville : Sélectionnez la ville où se trouve le bien que vous souhaitez louer.
+                        <br>
+                        • Sélectionner le jour : Choisissez entre 'Weekend' et 'Weekdays' en fonction de vos besoins.
+                        <br>
+                        • Type de Logement : Sélectionnez le type de logement que vous souhaitez proposer, par exemple, Private room
+                        <br>
+                        • Capacité : Indiquez le nombre de personnes que votre bien peut accueillir.
+                        <br>
+                        • Localisation : Cliquez sur la carte pour sélectionner l'emplacement exact de votre bien.
+                        <br>
+                        Ensuite, l'application utilisera un modèle de prédiction de type Random Forest préalablement entraîné pour prédire le prix de location en fonction de ses caractéristiques.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div>
+                <div class="box box-solid">
+                  <div class="box-header">
+                    <h3 class="box-title">
+                      <span>
+                        <i class="fas fa-marker" role="presentation" aria-label="marker icon"></i>
+                        Crédits
+                      </span>
+                    </h3>
+                  </div>
+                  <div class="box-body">
+                    Projet fait par Mathilde YIM, Hadirou TAMDAMBA et Manon GAUDIN
+                    <br>
+                    dans le cadre de la spécialisation Sciences de Donnée à l'Institut Agro Rennes Angers.
+                    <br>
+                    <br>
+                    Données :
+                    <a href="https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities" target="_blank">Airbnb Prices in European Cities, par The Devastator</a>
+                  </div>
+                  <div class="box-footer">© 2023</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-BaseDonnees">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title">Base de Données</h3>
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item-overflow-hidden html-fill-item shiny-bound-output" id="data_table" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-PrixMoyVill">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="col-sm-12">
+                  <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs" data-tabsetid="4955" role="tablist">
+                      <li class="active" role="presentation">
+                        <a href="http://127.0.0.1:3805/#tab-4955-1" data-toggle="tab" data-bs-toggle="tab" data-value="Semaine/Week-end" role="tab" id="ui-tab-391" tabindex="0" aria-selected="true" aria-controls="tab-4955-1">Semaine/Week-end</a>
+                      </li>
+                      <li role="presentation">
+                        <a href="http://127.0.0.1:3805/#tab-4955-2" data-toggle="tab" data-bs-toggle="tab" data-value="Type logement" role="tab" id="ui-tab-577" tabindex="-1" aria-selected="false" aria-controls="tab-4955-2">Type logement</a>
+                      </li>
+                      <li role="presentation">
+                        <a href="http://127.0.0.1:3805/#tab-4955-3" data-toggle="tab" data-bs-toggle="tab" data-value="Nombre personnes" role="tab" id="ui-tab-537" tabindex="-1" aria-selected="false" aria-controls="tab-4955-3">Nombre personnes</a>
+                      </li>
+                      <li role="presentation">
+                        <a href="http://127.0.0.1:3805/#tab-4955-4" data-toggle="tab" data-bs-toggle="tab" data-value="Propreté" role="tab" id="ui-tab-468" tabindex="-1" aria-selected="false" aria-controls="tab-4955-4">Propreté</a>
+                      </li>
+                      <li role="presentation">
+                        <a href="http://127.0.0.1:3805/#tab-4955-5" data-toggle="tab" data-bs-toggle="tab" data-value="Satisfaction" role="tab" id="ui-tab-567" tabindex="-1" aria-selected="false" aria-controls="tab-4955-5">Satisfaction</a>
+                      </li>
+                      <li class="header pull-right" role="presentation">
+                        <span>
+                          <i class="fas fa-circle-plus" role="presentation" aria-label="circle-plus icon"></i>
+                          Prix moyen d'une nuit en fonction du critère selectionné
+                        </span>
+                      </li>
+                    </ul>
+                    <div class="tab-content" data-tabsetid="4955">
+                      <div class="tab-pane active" data-value="Semaine/Week-end" id="tab-4955-1" role="tabpanel" tabindex="0" aria-hidden="false" aria-labelledby="ui-tab-391">
+                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixMoyWDWE" style="width:100%;height:400px;" aria-live="polite"></div>
+                      </div>
+                      <div class="tab-pane" data-value="Type logement" id="tab-4955-2" role="tabpanel" tabindex="-1" aria-hidden="true" aria-labelledby="ui-tab-577">
+                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixMoyTypLgmt" style="width:100%;height:400px;" aria-live="polite"></div>
+                      </div>
+                      <div class="tab-pane" data-value="Nombre personnes" id="tab-4955-3" role="tabpanel" tabindex="-1" aria-hidden="true" aria-labelledby="ui-tab-537">
+                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixMoyPersCap" style="width:100%;height:400px;" aria-live="polite"></div>
+                      </div>
+                      <div class="tab-pane" data-value="Propreté" id="tab-4955-4" role="tabpanel" tabindex="-1" aria-hidden="true" aria-labelledby="ui-tab-468">
+                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixMoyPropr" style="width:100%;height:400px;" aria-live="polite"></div>
+                      </div>
+                      <div class="tab-pane" data-value="Satisfaction" id="tab-4955-5" role="tabpanel" tabindex="-1" aria-hidden="true" aria-labelledby="ui-tab-567">
+                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixSatisf" style="width:100%;height:400px;" aria-live="polite"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-sm-12">
+                  <div class="box box-solid box-info">
+                    <div class="box-header">
+                      <h3 class="box-title">
+                        <span>
+                          <i class="fas fa-database" role="presentation" aria-label="database icon"></i>
+                          Résumé des données
+                        </span>
+                      </h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <pre class="shiny-text-output noplaceholder shiny-bound-output" id="summary" aria-live="polite"></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="box box-solid box-warning">
+                    <div class="box-header">
+                      <h3 class="box-title">
+                        <span>
+                          <i class="fas fa-receipt" role="presentation" aria-label="receipt icon"></i>
+                          Prix moyen d'une nuit pour les différentes villes
+                        </span>
+                      </h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                      <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PrixMoy" style="width:100%;height:400px;" aria-live="polite"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-RechercherunAirBNB">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-success">
+                  <div class="box-header">
+                    <h3 class="box-title">
+                      <span>
+                        <i class="far fa-map" role="presentation" aria-label="map icon"></i>
+                        Carte
+                      </span>
+                    </h3>
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div class="leaflet html-widget html-widget-output shiny-report-size html-fill-item-overflow-hidden html-fill-item shiny-bound-output" id="map" style="width:100%;height:100%;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-Deposeruneannonce">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-success">
+                  <div class="box-header">
+                    <h3 class="box-title">
+                      <span>
+                        <i class="fas fa-circle-info" role="presentation" aria-label="circle-info icon"></i>
+                         Après avoir sélectionné les caractéristiques de votre bien à louer, veuillez cliquer sur sa localisation
+                      </span>
+                    </h3>
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div class="leaflet html-widget html-widget-output shiny-report-size html-fill-item-overflow-hidden html-fill-item shiny-bound-output" id="map2" style="width:100%;height:100%;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title">
+                      <span>
+                        <i class="fas fa-dollar-sign" role="presentation" aria-label="dollar-sign icon"></i>
+                         Prix estimé
+                      </span>
+                    </h3>
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" data-widget="collapse">
+                        <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="box-body">
+                    <div id="predicted_price" class="shiny-text-output shiny-bound-output" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+<div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><div aria-live="assertive" role="log" aria-relevant="additions" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin-top: -1px; clip: rect(1px, 1px, 1px, 1px); overflow: hidden;"></div><deepl-input-controller><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div><div class="dl-input-translation-container svelte-ju4595"><div></div></div></div></template></deepl-input-controller></body></html>

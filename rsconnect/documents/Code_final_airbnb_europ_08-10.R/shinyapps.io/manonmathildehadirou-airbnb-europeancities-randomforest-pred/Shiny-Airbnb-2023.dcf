@@ -1,0 +1,12 @@
+name: Shiny-Airbnb-2023
+title: Shiny-Airbnb-2023
+username: manonmathildehadirou-airbnb-europeancities-randomforest-pred
+account: manonmathildehadirou-airbnb-europeancities-randomforest-pred
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10131390
+bundleId: 7779882
+url: https://manonmathildehadirou-airbnb-europeancities-randomforest-pred.shinyapps.io/Shiny-Airbnb-2023/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
